@@ -140,10 +140,12 @@
                             FontFamily="Montserrat"
                             Cursor="Hand"
                         HorizontalAlignment="Center
+                        
                         "
+                        Click="trailerbtn_Click"
                         Visibility="Collapsed"
-                        Click="addtofav_Click"
-            Name="addtofav"
+                        
+            Name="trailerbtn"
                 Width="200"
                 Height="100"
                             Margin="0,-20,0,0"

@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +25,7 @@ namespace WPF_LoginForm
     /// </summary>
     /// 
 
-    public partial class SearchUC : UserControl,INotifyPropertyChanged
+    public partial class SearchUC : UserControl, INotifyPropertyChanged
     {
 
         private string _poster;
@@ -60,14 +63,14 @@ namespace WPF_LoginForm
         private void Search_Click(object sender, RoutedEventArgs e)
         {
             SendRequest request = new SendRequest();
-            if(searchedtxtb.Text.Length>1)
+            if (searchedtxtb.Text.Length > 1)
             {
                 Poster = request.GetPoster(searchedtxtb.Text);
                 Title.Text = request.GetTitle(searchedtxtb.Text);
                 Genre.Content = request.GetGenre(searchedtxtb.Text);
                 Plot.Text = request.GetPlot(searchedtxtb.Text);
             }
-            addtofav.Visibility = Visibility.Visible;
+            trailerbtn.Visibility = Visibility.Visible;
         }
 
         private void addtofav_Click(object sender, RoutedEventArgs e)
@@ -75,11 +78,33 @@ namespace WPF_LoginForm
             var movie = new MovieUC();
             var fav = new FavoritesUC();
             SendRequest request = new SendRequest();
-            if(searchedtxtb.Text.Length>1)
+            if (searchedtxtb.Text.Length > 1)
             {
-                movie.Title.Content = request.GetTitle(searchedtxtb.Text); 
+                movie.Title.Content = request.GetTitle(searchedtxtb.Text);
             }
             fav.MyPanel.Children.Add(movie);
+        }
+
+        private void addtofav_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+        private void trailerbtn_Click(object sender, RoutedEventArgs e)
+        {
+            WebClient webClient = new WebClient();
+            NameValueCollection nameValueCollection = new NameValueCollection();
+            nameValueCollection.Add("q", Title.Text);
+
+            webClient.QueryString.Add(nameValueCollection);
+
+            var youtubesearch = new ProcessStartInfo
+            {
+                FileName = "https://www.youtube.com/results?search_query=" + Title.Text + " trailer",
+                UseShellExecute = true
+            };
+            Process.Start(youtubesearch);
         }
     }
 }
