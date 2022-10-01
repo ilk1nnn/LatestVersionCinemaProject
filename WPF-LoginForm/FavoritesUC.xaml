@@ -15,14 +15,69 @@
         </Grid.Background>
 
         <ScrollViewer VerticalScrollBarVisibility="Auto">
-            
-        <WrapPanel Orientation="Horizontal" Name="MyPanel">
 
-            <local:MovieUC x:Name="MPanel" Margin="0,10,0,0" Height="327" Width="276"></local:MovieUC>
-           
-        </WrapPanel>
+            <WrapPanel Orientation="Horizontal" Name="MyPanel">
+
+                <Label Height="100" VerticalAlignment="Top" Content="Favorite(s):" Foreground="White" FontSize="50" Margin="20,10,0,0"></Label>
+
+
+                <Grid Margin="-240,100,0,0" Width="250" Height="350">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="7*"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Border BorderBrush="Aqua" BorderThickness="2">
+                            
+                        <Image Stretch="Fill" Source="Images/1plus1.jpg" Margin="0,0,0,0"></Image>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Label Content="1+1" Foreground="White" FontWeight="Medium" FontSize="25" HorizontalAlignment="Center"></Label>
+                    </Grid>
+
+                </Grid>
+
+
+                <Grid Margin="30,100,0,0" Width="250" Height="350">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="7*"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Border BorderBrush="Aqua" BorderThickness="2">
+                            
+                        <Image Stretch="Fill" Source="Images/inte.jpg" Margin="0,0,0,0"></Image>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Label Content="Interstellar" Foreground="White" FontWeight="Medium" FontSize="25" HorizontalAlignment="Center"></Label>
+                    </Grid>
+
+                </Grid>
+
+                <Grid Margin="30,100,0,0" Width="250" Height="350">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="7*"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Border BorderBrush="Aqua" BorderThickness="2">
+                            <Image Stretch="Fill" Source="Images/av.jpg" Margin="0,0,0,0"></Image>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Label Content="Avangers:EndGame" Foreground="White" FontWeight="Medium" FontSize="25" HorizontalAlignment="Center"></Label>
+                    </Grid>
+
+                </Grid>
+
+            </WrapPanel>
         </ScrollViewer>
-        
+
 
     </Grid>
 </UserControl>

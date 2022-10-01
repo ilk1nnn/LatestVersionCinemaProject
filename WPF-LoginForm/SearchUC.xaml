@@ -134,7 +134,7 @@
                 <Grid Grid.Row="2">
                     <Button                         
                             BorderThickness="0"
-                            Content="ADD TO FAVORITES"
+                            Content="PLAY TRAILER"
                             Foreground="White"
                             FontSize="12"
                             FontFamily="Montserrat"
