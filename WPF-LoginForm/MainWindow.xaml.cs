@@ -29,12 +29,21 @@ namespace WPF_LoginForm
         {
             SearchPanel.Visibility = Visibility.Visible;
             FavPanel.Visibility = Visibility.Collapsed;
+            TicketPanel.Visibility = Visibility.Collapsed;
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             FavPanel.Visibility = Visibility.Visible;
             SearchPanel.Visibility = Visibility.Collapsed;
+            TicketPanel.Visibility= Visibility.Collapsed;
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            TicketPanel.Visibility = Visibility.Visible;
+            SearchPanel.Visibility = Visibility.Collapsed;
+            FavPanel.Visibility = Visibility.Collapsed;
         }
     }
 }

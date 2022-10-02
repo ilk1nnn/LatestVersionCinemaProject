@@ -24,6 +24,7 @@
         <Grid Grid.Column="1">
             <local:SearchUC x:Name="SearchPanel" Visibility="Collapsed"></local:SearchUC>
             <local:FavoritesUC x:Name="FavPanel" Visibility="Collapsed"></local:FavoritesUC>
+            <local:TicketsUC x:Name="TicketPanel" Visibility="Collapsed"></local:TicketsUC>
         </Grid>
 
 
@@ -66,7 +67,7 @@
             </Grid>
 
             <Grid Grid.Row="3">
-                <Button  Background="Transparent"></Button>
+                <Button  Click="Button_Click_2" Background="Transparent"></Button>
                 <Image Source="Images/ticket.png" Width="40" Margin="25,0,0,0" HorizontalAlignment="Left"></Image>
                 <Label  Content="Tickets" Foreground="White" HorizontalAlignment="Center" FontSize="25" Margin="-50,33,0,0"></Label>
                 <Label Background="White" Height="1" VerticalAlignment="Bottom"></Label>
